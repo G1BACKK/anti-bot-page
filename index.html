@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checking...</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding-top: 50px; }
+    button { padding: 15px 30px; font-size: 18px; margin-top: 20px; border-radius: 8px; }
+    #message { font-size: 18px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>🔒 Verifying you're not a bot...</h2>
+  <p id="message">Please move your mouse or scroll and wait 5 seconds.</p>
+  <button id="continueBtn" disabled onclick="proceed()">Continue</button>
+
+  <script>
+    let mouseMoved = false;
+    let scrolled = false;
+    let isHeadless = navigator.webdriver || /HeadlessChrome/.test(navigator.userAgent);
+    let timerStarted = false;
+
+    if (isHeadless) {
+      document.body.innerHTML = "<h2>❌ Access Denied: Bot Detected</h2>";
+    }
+
+    function enableButton() {
+      if (mouseMoved && scrolled) {
+        setTimeout(() => {
+          document.getElementById("continueBtn").disabled = false;
+          document.getElementById("message").innerText = "✅ You're verified! Click to continue.";
+        }, 5000);
+      }
+    }
+
+    window.onmousemove = () => {
+      mouseMoved = true;
+      enableButton();
+    };
+    window.onscroll = () => {
+      scrolled = true;
+      enableButton();
+    };
+
+    function proceed() {
+      window.location.href = "https://t.me/yourchannel"; // Replace with your Telegram link
+    }
+  </script>
+</body>
+</html>
