@@ -3,97 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join VIP Group</title>
+  <title>Join VIP Access</title>
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #ffffff;
+      background: #000;
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      background-image: url('logo.png'); /* Your image */
+      background-size: cover;
+      background-position: center;
     }
-
-    .button {
-      width: 90%;
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .container {
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+    }
+    .btn {
+      display: inline-block;
+      background: #25D366;
       color: white;
-      display: block;
+      padding: 15px 25px;
+      margin: 10px auto;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 90%;
+      max-width: 320px;
     }
-
-    .btn-subscribe {
-      background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    .btn:disabled {
+      background: #555;
+      cursor: not-allowed;
     }
-
-    .btn-share {
-      background-color: #6e6e6e;
-    }
-
-    .btn-unlocked {
-      background: linear-gradient(90deg, #8e2de2, #ff416c);
-    }
-
-    .btn-whatsapp {
-      background-color: #25D366;
-    }
-
-    #mainImage {
-      width: 50px;
-      margin: 20px auto;
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h2>🎁 Join VIP Group Access</h2>
+    <p>👇 Share on WhatsApp to unlock the VIP group:</p>
 
-  <button class="button btn-subscribe" onclick="showShareButton()">SUBSCRIBE NOW<br><small>JOIN NOW FOR FREE</small></button>
+    <button class="btn" id="shareBtn">🔗 Share on WhatsApp</button>
+    <button class="btn" id="unlockBtn" style="display:none;" onclick="window.location.href='https://t.me/+NB_Chz9PeyIwNzk1'">
+      ✅ Join VIP Channel
+    </button>
 
-  <img id="mainImage" src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram Icon"/>
+    <br/><br/>
+    <a class="btn" style="background:#128C7E" href="https://wa.me/919123456789" target="_blank">💬 Get Sureshot Number</a>
+  </div>
 
-  <button id="mainButton" class="button btn-share" style="display: none;" onclick="simulateShares()">SHARE WITH 5 FRIENDS TO UNLOCK</button>
-
-  <button id="whatsappBtn" class="button btn-whatsapp" style="display: none;" onclick="openWhatsApp()">📲 GET SURESHOT NUMBER — OPEN WHATSAPP</button>
+  <!-- Optional welcome voice -->
+  <audio autoplay>
+    <source src="https://voca.ro/1i1sthzQCFXm" type="audio/mpeg">
+  </audio>
 
   <script>
-    let shareCount = 0;
+    const shareBtn = document.getElementById('shareBtn');
+    const unlockBtn = document.getElementById('unlockBtn');
 
-    function showShareButton() {
-      document.getElementById("mainButton").style.display = "block";
-    }
+    shareBtn.addEventListener('click', () => {
+      const url = encodeURIComponent("Join this secret Telegram channel: https://t.me/+NB_Chz9PeyIwNzk1");
+      const whatsappURL = `https://api.whatsapp.com/send?text=${url}`;
 
-    function simulateShares() {
-      shareCount++;
-      alert(`Share ${shareCount}/5 done! Share this link manually in Instagram: https://g1backk.github.io/anti-bot-page/`);
+      window.open(whatsappURL, "_blank");
 
-      if (shareCount >= 5) {
-        const btn = document.getElementById("mainButton");
-        btn.textContent = "✅ UNLOCKED — JOIN FAST";
-        btn.className = "button btn-unlocked";
-        btn.onclick = () => {
-          window.location.href = "https://t.me/+q1Wg9YeCAKFlOGRl"; // Your Telegram group link
-        };
-
-        // Change icon
-        document.getElementById("mainImage").src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
-
-        // Show WhatsApp button
-        document.getElementById("whatsappBtn").style.display = "block";
-      }
-    }
-
-    function openWhatsApp() {
-      window.open("https://wa.me/919999999999", "_blank"); // Replace with your WhatsApp number
-    }
+      // After short delay, show unlock
+      setTimeout(() => {
+        unlockBtn.style.display = "inline-block";
+        shareBtn.style.display = "none";
+      }, 3000); // 3 seconds delay
+    });
   </script>
-
 </body>
 </html>
+
 
 
 
