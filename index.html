@@ -1,92 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ziya VIP Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, #8e2de2, #ff416c);
-      color: white;
-      font-weight: bold;
-      padding: 18px 20px;
-      border: none;
-      border-radius: 12px;
-      font-size: 20px;
-      margin: 20px 0;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 18px;
-      margin: 20px 0;
-      box-shadow: 0 0 12px rgba(255,255,255,0.15);
-    }
-
-    #finalLink {
-      display: none;
-      font-size: 20px;
-      margin-top: 20px;
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Ziya VIP</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body onclick="playAudio()">
-
-  <h2>👑 ZIYA VIP GROUP</h2>
-
-  <button class="btn" onclick="countClick()">SUBSCRIBE NOW<br><small>Click 3 times to Unlock</small></button>
-
-  <!-- ✅ Your uploaded image -->
-  <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-fxpkRz4slDZCyzpX6Izxg4K9/user-5dNoqSLzO1ggb29Z3ixZfHtb/img-7UP3qFZh8M2FMZqGpTniVYOj.png?st=2024-05-27T15%3A00%3A00Z&se=2025-05-27T15%3A00%3A00Z&sp=r&sv=2022-11-02&sr=b&sig=gYwlNdIjOV5qKIuhOeNpGlw0pqid7KZdC61xZlItuCQ%3D" alt="Ziya VIP Promo" />
-
-  <div id="finalLink">
-    ✅ You’ve clicked 3 times. <br>
-    <a href="https://t.me/+NB_Chz9PeyIwNzk1" style="color: #00ffcc; font-weight: bold;">👉 Click here to Join VIP Group</a>
-  </div>
-
-  <!-- 🎧 Voice message -->
-  <audio id="audio" autoplay>
-    <source src="https://vocaroo.com/media_command.php?media=s0I1sthzQCFXm&command=download_mp3" type="audio/mpeg">
+<body>
+  <audio autoplay>
+    <source src="voice.mp3" type="audio/mpeg" />
+    Your browser does not support audio.
   </audio>
 
-  <script>
-    let clicks = 0;
-    function countClick() {
-      clicks++;
-      if (clicks >= 3) {
-        document.getElementById('finalLink').style.display = 'block';
-      }
-    }
+  <div class="container">
+    <img src="logo.png" alt="Ziya VIP" class="logo" />
+    <h1>Join Ziya VIP Channel</h1>
+    <p>👇 Tap 3 times to unlock group 👇</p>
 
-    function playAudio() {
-      const audio = document.getElementById("audio");
-      if (audio) {
-        audio.play().catch(e => console.log("Audio auto-play blocked."));
-      }
-    }
-  </script>
+    <button id="subscribe-btn">SUBSCRIBE NOW</button>
+    <p id="counter">0 Clicks</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
