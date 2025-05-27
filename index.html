@@ -1,85 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join VIP Access</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join Telegram | Earn Fast</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
       background: #000;
-      color: #fff;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      background-image: url('logo.png'); /* Your image */
-      background-size: cover;
-      background-position: center;
     }
+
     .container {
-      padding: 30px 20px;
-      background: rgba(0, 0, 0, 0.7);
-      min-height: 100vh;
+      padding: 40px 20px;
     }
-    .btn {
-      display: inline-block;
-      background: #25D366;
+
+    h1 {
+      font-size: 22px;
+      animation: blink 1.2s infinite;
+      margin-bottom: 40px;
+    }
+
+    @keyframes blink {
+      0%, 100% { color: #0f0; }
+      50% { color: #000; }
+    }
+
+    .glow-btn {
+      font-size: 20px;
+      padding: 15px 30px;
       color: white;
-      padding: 15px 25px;
-      margin: 10px auto;
-      font-size: 18px;
-      border: none;
+      background-color: #111;
+      border: 2px solid #0f0;
       border-radius: 10px;
-      cursor: pointer;
-      width: 90%;
-      max-width: 320px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 50px;
+      box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+      animation: pulse 1.5s infinite;
     }
-    .btn:disabled {
-      background: #555;
-      cursor: not-allowed;
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #0f0; }
+      50% { box-shadow: 0 0 25px #0f0; }
+      100% { box-shadow: 0 0 5px #0f0; }
     }
-    audio {
-      display: none;
+
+    .hacker-msg {
+      font-size: 20px;
+      color: #0f0;
+      background: rgba(0,255,0,0.1);
+      padding: 15px;
+      border: 1px dashed #0f0;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      font-size: 18px;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 10px #25D366;
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 5px #25D366; }
+      50% { box-shadow: 0 0 25px #25D366; }
+      100% { box-shadow: 0 0 5px #25D366; }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h2>🎁 Join VIP Group Access</h2>
-    <p>👇 Share on WhatsApp to unlock the VIP group:</p>
+    <a href="https://t.me/+NB_Chz9PeyIwNzk1" class="glow-btn">🚀 JOIN TELEGRAM FOR FREE</a>
 
-    <button class="btn" id="shareBtn">🔗 Share on WhatsApp</button>
-    <button class="btn" id="unlockBtn" style="display:none;" onclick="window.location.href='https://t.me/+NB_Chz9PeyIwNzk1'">
-      ✅ Join VIP Channel
-    </button>
+    <div class="hacker-msg">
+      ⚡ FOR NUMBER SURESHOT <br>
+      💰 300 SE 10000 BNA DUNGA <br>
+      📲 MSG ME ON WHATSAPP NOW!
+    </div>
 
-    <br/><br/>
-    <a class="btn" style="background:#128C7E" href="https://wa.me/919123456789" target="_blank">💬 Get Sureshot Number</a>
+    <a href="https://wa.me/919123456789?text=Give%20me%20number%20sureshot" class="whatsapp-btn" target="_blank">💬 Message on WhatsApp</a><br>
+    <a href="https://wa.me/919123456789" class="whatsapp-btn" target="_blank">📞 WhatsApp Sureshot Help</a>
   </div>
 
-  <!-- Optional welcome voice -->
-  <audio autoplay>
-    <source src="https://voca.ro/1i1sthzQCFXm" type="audio/mpeg">
-  </audio>
-
-  <script>
-    const shareBtn = document.getElementById('shareBtn');
-    const unlockBtn = document.getElementById('unlockBtn');
-
-    shareBtn.addEventListener('click', () => {
-      const url = encodeURIComponent("Join this secret Telegram channel: https://t.me/+NB_Chz9PeyIwNzk1");
-      const whatsappURL = `https://api.whatsapp.com/send?text=${url}`;
-
-      window.open(whatsappURL, "_blank");
-
-      // After short delay, show unlock
-      setTimeout(() => {
-        unlockBtn.style.display = "inline-block";
-        shareBtn.style.display = "none";
-      }, 3000); // 3 seconds delay
-    });
-  </script>
 </body>
 </html>
+
 
 
 
