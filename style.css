@@ -1,34 +1,61 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #000, #111);
-  color: white;
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  padding: 30px;
 }
 
 .container {
-  max-width: 400px;
-  margin: auto;
+  padding: 20px;
 }
 
-.logo {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-button {
-  background: linear-gradient(to right, #ff0080, #7928ca);
-  color: white;
-  padding: 15px 25px;
-  font-size: 18px;
+.main-button, .secondary-button, .whatsapp-button {
+  width: 90%;
+  margin: 15px auto;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: bold;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(90deg, #6e00ff, #ff1f75);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   cursor: pointer;
-  margin-top: 15px;
 }
 
-button:active {
-  transform: scale(0.97);
+.sub {
+  font-size: 14px;
+  display: block;
+}
+
+.secondary-button {
+  background: #333;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background: #25D366;
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
