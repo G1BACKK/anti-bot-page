@@ -2,101 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subscribe Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Our Telegram</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    .button {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 400px;
-      border: none;
-      border-radius: 12px;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-      cursor: not-allowed;
-      opacity: 0.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
     }
-
-    .button.active {
-      cursor: pointer;
-      opacity: 1;
+    img {
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-
-    .banner {
-      background: #fff;
+    h1 {
+      font-size: 1.8em;
       margin: 20px;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
-
-    .banner img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-    }
-
-    .tagline {
+    .btn {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border: none;
+      color: white;
+      padding: 15px 25px;
       font-size: 18px;
-      font-weight: bold;
-      margin-top: 10px;
+      border-radius: 10px;
+      cursor: not-allowed;
+      margin-top: 20px;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    .btn.active {
+      opacity: 1;
+      cursor: pointer;
+    }
+    #status {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ccc;
     }
   </style>
 </head>
-<body>
-  <h2 style="margin-top: 30px;">SUBSCRIBE NOW</h2>
-  <p>JOIN NOW FOR FREE</p>
+<body onclick="playAudioOnce()">
+  <h1>🎁 Group Join Karne ke liye 3 baar button pe click karein</h1>
+  <img src="https://telegra.ph/file/b5709b12a8cd3a13a9ad4.jpg" alt="Banner" />
 
-  <div class="banner">
-    <img src="https://telegra.ph/file/b5709b12a8cd3a13a9ad4.jpg" alt="Promo">
-    <div class="tagline">🔥 JOIN CHANNEL NOW ‼️<br>📈 TOP QUALITY SESSIONS<br>💥 UNDER 3 LEVEL WINS</div>
-  </div>
+  <button class="btn" id="verifyBtn">Click to Verify (3)</button>
+  <div id="status">3 clicks remaining</div>
 
-  <button class="button" id="subscribeBtn" disabled>JOIN TELEGRAM CHANNEL</button>
+  <audio id="voice" src="https://vocaroo.com/media_command.php?media=s1i1sthzQCFXm&command=download_mp3" preload="auto"></audio>
 
   <script>
-    let isHuman = false;
-    let timerStarted = false;
+    let clicked = 0;
+    const btn = document.getElementById('verifyBtn');
+    const status = document.getElementById('status');
+    const audio = document.getElementById('voice');
+    const telegramLink = 'https://t.me/+NB_Chz9PeyIwNzk1';
 
-    function activateButton() {
-      const btn = document.getElementById('subscribeBtn');
-      btn.classList.add('active');
-      btn.disabled = false;
-      btn.style.cursor = 'pointer';
-      btn.onclick = () => {
-        window.location.href = 'https://t.me/+c3Nk6XFvOs4wYjI1'; // replace with your real channel
-      };
-    }
-
-    function startTimer() {
-      if (!timerStarted) {
-        timerStarted = true;
-        setTimeout(() => {
-          if (isHuman) activateButton();
-        }, 5000);
+    let audioPlayed = false;
+    function playAudioOnce() {
+      if (!audioPlayed) {
+        audio.play().catch(() => {});
+        audioPlayed = true;
       }
     }
 
-    ['scroll', 'click', 'touchstart'].forEach(evt => {
-      document.addEventListener(evt, () => {
-        isHuman = true;
-        startTimer();
-      }, { once: true });
+    btn.addEventListener('click', () => {
+      playAudioOnce();
+      clicked++;
+      let left = 3 - clicked;
+
+      if (left > 0) {
+        btn.textContent = `Click to Verify (${left})`;
+        status.textContent = `${left} clicks remaining`;
+      } else {
+        btn.classList.add('active');
+        btn.textContent = '✅ JOIN TELEGRAM';
+        status.textContent = 'Verification complete! Tap to join.';
+        btn.disabled = false;
+        btn.style.cursor = "pointer";
+        btn.onclick = () => window.location.href = telegramLink;
+      }
     });
   </script>
 </body>
 </html>
+
 
