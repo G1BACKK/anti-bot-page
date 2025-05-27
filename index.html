@@ -1,98 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Our Telegram</title>
+  <meta charset="UTF-8">
+  <title>Ziya VIP Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
+      background: #0a0a0a;
+      color: #fff;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
       text-align: center;
+      padding: 20px;
     }
-    img {
-      max-width: 90%;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    h1 {
-      font-size: 1.8em;
-      margin: 20px;
-    }
+
     .btn {
-      background: linear-gradient(135deg, #ff416c, #ff4b2b);
-      border: none;
+      background: linear-gradient(90deg, #8e2de2, #ff416c);
       color: white;
-      padding: 15px 25px;
-      font-size: 18px;
-      border-radius: 10px;
-      cursor: not-allowed;
+      font-weight: bold;
+      padding: 18px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 20px;
+      margin: 20px 0;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      margin: 20px 0;
+      box-shadow: 0 0 12px rgba(255,255,255,0.15);
+    }
+
+    #finalLink {
+      display: none;
+      font-size: 20px;
       margin-top: 20px;
-      opacity: 0.6;
-      transition: all 0.3s ease;
     }
-    .btn.active {
-      opacity: 1;
-      cursor: pointer;
-    }
-    #status {
-      margin-top: 15px;
-      font-size: 16px;
-      color: #ccc;
+
+    audio {
+      display: none;
     }
   </style>
 </head>
-<body onclick="playAudioOnce()">
-  <h1>🎁 Group Join Karne ke liye 3 baar button pe click karein</h1>
-  <img src="https://telegra.ph/file/b5709b12a8cd3a13a9ad4.jpg" alt="Banner" />
+<body onclick="playAudio()">
 
-  <button class="btn" id="verifyBtn">Click to Verify (3)</button>
-  <div id="status">3 clicks remaining</div>
+  <h2>👑 ZIYA VIP GROUP</h2>
 
-  <audio id="voice" src="https://vocaroo.com/media_command.php?media=s1i1sthzQCFXm&command=download_mp3" preload="auto"></audio>
+  <button class="btn" onclick="countClick()">SUBSCRIBE NOW<br><small>Click 3 times to Unlock</small></button>
+
+  <!-- ✅ Your uploaded image -->
+  <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-fxpkRz4slDZCyzpX6Izxg4K9/user-5dNoqSLzO1ggb29Z3ixZfHtb/img-7UP3qFZh8M2FMZqGpTniVYOj.png?st=2024-05-27T15%3A00%3A00Z&se=2025-05-27T15%3A00%3A00Z&sp=r&sv=2022-11-02&sr=b&sig=gYwlNdIjOV5qKIuhOeNpGlw0pqid7KZdC61xZlItuCQ%3D" alt="Ziya VIP Promo" />
+
+  <div id="finalLink">
+    ✅ You’ve clicked 3 times. <br>
+    <a href="https://t.me/+NB_Chz9PeyIwNzk1" style="color: #00ffcc; font-weight: bold;">👉 Click here to Join VIP Group</a>
+  </div>
+
+  <!-- 🎧 Voice message -->
+  <audio id="audio" autoplay>
+    <source src="https://vocaroo.com/media_command.php?media=s0I1sthzQCFXm&command=download_mp3" type="audio/mpeg">
+  </audio>
 
   <script>
-    let clicked = 0;
-    const btn = document.getElementById('verifyBtn');
-    const status = document.getElementById('status');
-    const audio = document.getElementById('voice');
-    const telegramLink = 'https://t.me/+NB_Chz9PeyIwNzk1';
-
-    let audioPlayed = false;
-    function playAudioOnce() {
-      if (!audioPlayed) {
-        audio.play().catch(() => {});
-        audioPlayed = true;
+    let clicks = 0;
+    function countClick() {
+      clicks++;
+      if (clicks >= 3) {
+        document.getElementById('finalLink').style.display = 'block';
       }
     }
 
-    btn.addEventListener('click', () => {
-      playAudioOnce();
-      clicked++;
-      let left = 3 - clicked;
-
-      if (left > 0) {
-        btn.textContent = `Click to Verify (${left})`;
-        status.textContent = `${left} clicks remaining`;
-      } else {
-        btn.classList.add('active');
-        btn.textContent = '✅ JOIN TELEGRAM';
-        status.textContent = 'Verification complete! Tap to join.';
-        btn.disabled = false;
-        btn.style.cursor = "pointer";
-        btn.onclick = () => window.location.href = telegramLink;
+    function playAudio() {
+      const audio = document.getElementById("audio");
+      if (audio) {
+        audio.play().catch(e => console.log("Audio auto-play blocked."));
       }
-    });
+    }
   </script>
 </body>
 </html>
+
 
 
