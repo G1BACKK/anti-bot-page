@@ -2,110 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Now - Premium Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
     body {
-      background: #000;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #000000, #0f0f0f);
+      color: #00ffae;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
+      justify-content: center;
       min-height: 100vh;
-      padding: 30px 15px;
+      padding: 2rem;
       overflow-x: hidden;
+      position: relative;
     }
 
-    .glow-btn {
-      background: #000;
-      border: 2px solid #0f0;
-      color: #fff;
-      padding: 15px 25px;
-      font-size: 20px;
-      border-radius: 12px;
-      text-align: center;
-      text-shadow: 0 0 5px #0f0;
-      box-shadow: 0 0 20px #0f0;
-      animation: pulse 1.5s infinite alternate;
-      margin-bottom: 30px;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
+    }
+
+    .btn {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #00ffae;
+      color: #00ffae;
+      padding: 15px 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      box-shadow: 0 0 20px #00ffae, 0 0 40px #00ffae;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .btn:hover {
+      background: #00ffae;
+      color: #000;
+      box-shadow: 0 0 40px #00ffae, 0 0 80px #00ffae;
     }
 
     @keyframes pulse {
       0% {
-        box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+        transform: scale(1);
+        box-shadow: 0 0 20px #00ffae;
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px #00ffae;
       }
       100% {
-        box-shadow: 0 0 25px #0f0, 0 0 40px #0f0;
+        transform: scale(1);
+        box-shadow: 0 0 20px #00ffae;
       }
     }
 
-    .hacker-box {
-      border: 2px dashed #0f0;
-      padding: 15px;
-      margin-bottom: 30px;
-      font-size: 18px;
-      background: rgba(0, 255, 0, 0.05);
+    .glow-text {
+      color: #00ffae;
+      font-size: 1.3rem;
       text-align: center;
-      animation: typewriter 4s steps(40, end) 1s 1 normal both;
+      margin-bottom: 1.5rem;
+      animation: hacker 1.5s infinite alternate;
     }
 
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
+    @keyframes hacker {
+      from {
+        text-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
+      }
+      to {
+        text-shadow: 0 0 30px #00ffae, 0 0 60px #00ffae;
+      }
     }
 
-    .wa-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #25D366;
-      color: #000;
-      border: none;
-      padding: 15px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 360px;
-      margin: 10px 0;
-      box-shadow: 0 0 15px #25D366, 0 0 30px #25D366;
-      transition: transform 0.2s ease-in-out;
-      text-decoration: none;
-    }
-
-    .wa-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .emoji {
-      margin-right: 8px;
+    .particle-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index: -1;
+      background: #000;
     }
   </style>
 </head>
 <body>
+  <canvas class="particle-bg"></canvas>
 
-  <a class="glow-btn" href="https://t.me/your_channel" target="_blank">
-    🚀 JOIN TELEGRAM FOR FREE
-  </a>
+  <h1>🚀 JOIN TELEGRAM FOR FREE</h1>
+  <a href="https://t.me/+DZERETIFTt9jYjRl" class="btn">Join Now</a>
 
-  <div class="hacker-box">
-    ⚡ FOR NUMBER SURESHOT<br/>
-    💰 300 SE 10000 BNA DUNGA<br/>
+  <p class="glow-text">
+    ⚡ FOR NUMBER SURESHOT<br>
+    💰 300 SE 10000 BNA DUNGA<br>
     📲 MSG ME ON WHATSAPP NOW!
-  </div>
+  </p>
 
-  <a class="wa-btn" href="https://wa.me/919999999999?text=Hey%20bro%2C%20sureshot%20number%20chahiye" target="_blank">
-    💬 Message on WhatsApp
-  </a>
+  <a href="https://wa.me/919999999999" class="btn">💬 Message on WhatsApp</a>
+  <a href="https://wa.me/919999999999?text=Send%20Sureshot%20Number%20Now" class="btn">📞 WhatsApp Sureshot Help</a>
 
-  <a class="wa-btn" href="https://wa.me/919999999999?text=Give%20me%20WhatsApp%20Sureshot%20Help" target="_blank">
-    📞 WhatsApp Sureshot Help
-  </a>
+  <script>
+    const canvas = document.querySelector('.particle-bg');
+    const pCtx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
+    let particles = [];
+    const count = 120;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        pCtx.fillStyle = '#00ffae';
+        pCtx.beginPath();
+        pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        pCtx.fill();
+      }
+    }
+
+    function init() {
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      pCtx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
 </body>
 </html>
+
 
 
 
