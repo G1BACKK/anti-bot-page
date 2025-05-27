@@ -3,27 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Ziya VIP</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Ziya VIP</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio autoplay>
-    <source src="voice.mp3" type="audio/mpeg" />
-    Your browser does not support audio.
-  </audio>
-
   <div class="container">
-    <img src="logo.png" alt="Ziya VIP" class="logo" />
-    <h1>Join Ziya VIP Channel</h1>
-    <p>👇 Tap 3 times to unlock group 👇</p>
+    <button id="mainBtn" class="main-button">SUBSCRIBE NOW<br><span class="sub">JOIN NOW FOR FREE</span></button>
 
-    <button id="subscribe-btn">SUBSCRIBE NOW</button>
-    <p id="counter">0 Clicks</p>
+    <div class="image-container">
+      <img src="logo.png" alt="Ziya VIP">
+    </div>
+
+    <div id="sharePrompt" class="hidden">
+      <button id="shareBtn" class="secondary-button">SHARE WITH 1 FRIEND TO UNLOCK</button>
+    </div>
+
+    <div id="unlockedBtn" class="hidden">
+      <button class="main-button">✅ UNLOCKED — JOIN FAST</button>
+    </div>
+
+    <a href="https://wa.me/919999999999" class="whatsapp-button" target="_blank">📲 GET SURESHOT NUMBER — OPEN WHATSAPP</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const mainBtn = document.getElementById("mainBtn");
+    const sharePrompt = document.getElementById("sharePrompt");
+    const shareBtn = document.getElementById("shareBtn");
+    const unlockedBtn = document.getElementById("unlockedBtn");
+
+    mainBtn.onclick = () => {
+      sharePrompt.classList.remove("hidden");
+      mainBtn.classList.add("disabled");
+    };
+
+    shareBtn.onclick = () => {
+      alert("Now share the pinned message in Telegram to 1 person to continue.");
+      unlockedBtn.classList.remove("hidden");
+      sharePrompt.classList.add("disabled");
+    };
+  </script>
 </body>
 </html>
+
 
 
 
