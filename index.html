@@ -3,47 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ziya VIP</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Join VIP Group</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .button {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: white;
+      display: block;
+    }
+
+    .btn-subscribe {
+      background: linear-gradient(90deg, #c471f5, #fa71cd);
+    }
+
+    .btn-share {
+      background-color: #6e6e6e;
+    }
+
+    .btn-unlocked {
+      background: linear-gradient(90deg, #8e2de2, #ff416c);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    #mainImage {
+      width: 50px;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <button id="mainBtn" class="main-button">SUBSCRIBE NOW<br><span class="sub">JOIN NOW FOR FREE</span></button>
 
-    <div class="image-container">
-      <img src="logo.png" alt="Ziya VIP">
-    </div>
+  <button class="button btn-subscribe" onclick="showShareButton()">SUBSCRIBE NOW<br><small>JOIN NOW FOR FREE</small></button>
 
-    <div id="sharePrompt" class="hidden">
-      <button id="shareBtn" class="secondary-button">SHARE WITH 1 FRIEND TO UNLOCK</button>
-    </div>
+  <img id="mainImage" src="https://cdn-icons-png.flaticon.com/512/545/545705.png" alt="Forward Icon"/>
 
-    <div id="unlockedBtn" class="hidden">
-      <button class="main-button">✅ UNLOCKED — JOIN FAST</button>
-    </div>
+  <button id="mainButton" class="button btn-share" style="display: none;" onclick="triggerTelegramShare()">SHARE WITH 1 FRIEND TO UNLOCK</button>
 
-    <a href="https://wa.me/919999999999" class="whatsapp-button" target="_blank">📲 GET SURESHOT NUMBER — OPEN WHATSAPP</a>
-  </div>
+  <button id="whatsappBtn" class="button btn-whatsapp" style="display: none;" onclick="openWhatsApp()">📲 GET SURESHOT NUMBER — OPEN WHATSAPP</button>
 
   <script>
-    const mainBtn = document.getElementById("mainBtn");
-    const sharePrompt = document.getElementById("sharePrompt");
-    const shareBtn = document.getElementById("shareBtn");
-    const unlockedBtn = document.getElementById("unlockedBtn");
+    function showShareButton() {
+      document.getElementById("mainButton").style.display = "block";
+    }
 
-    mainBtn.onclick = () => {
-      sharePrompt.classList.remove("hidden");
-      mainBtn.classList.add("disabled");
-    };
+    function triggerTelegramShare() {
+      // Open Telegram share window
+      window.open("https://t.me/share/url?url=https://g1backk.github.io/anti-bot-page/", "_blank");
 
-    shareBtn.onclick = () => {
-      alert("Now share the pinned message in Telegram to 1 person to continue.");
-      unlockedBtn.classList.remove("hidden");
-      sharePrompt.classList.add("disabled");
-    };
+      // Wait and unlock the join fast button
+      setTimeout(() => {
+        const btn = document.getElementById("mainButton");
+        btn.textContent = "✅ UNLOCKED — JOIN FAST";
+        btn.className = "button btn-unlocked";
+        btn.onclick = () => {
+          window.location.href = "https://t.me/+q1Wg9YeCAKFlOGRl"; // Your VIP channel/group link
+        };
+
+        // Update icon
+        document.getElementById("mainImage").src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
+
+        // Show WhatsApp button
+        document.getElementById("whatsappBtn").style.display = "block";
+      }, 4000);
+    }
+
+    function openWhatsApp() {
+      window.open("https://wa.me/919999999999", "_blank"); // Replace with your WhatsApp number
+    }
   </script>
+
 </body>
 </html>
+
 
 
 
