@@ -29,7 +29,7 @@
     }
 
     .btn-subscribe {
-      background: linear-gradient(90deg, #c471f5, #fa71cd);
+      background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     }
 
     .btn-share {
@@ -54,36 +54,37 @@
 
   <button class="button btn-subscribe" onclick="showShareButton()">SUBSCRIBE NOW<br><small>JOIN NOW FOR FREE</small></button>
 
-  <img id="mainImage" src="https://cdn-icons-png.flaticon.com/512/545/545705.png" alt="Forward Icon"/>
+  <img id="mainImage" src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram Icon"/>
 
-  <button id="mainButton" class="button btn-share" style="display: none;" onclick="triggerTelegramShare()">SHARE WITH 5 FRIEND TO UNLOCK</button>
+  <button id="mainButton" class="button btn-share" style="display: none;" onclick="simulateShares()">SHARE WITH 5 FRIENDS TO UNLOCK</button>
 
   <button id="whatsappBtn" class="button btn-whatsapp" style="display: none;" onclick="openWhatsApp()">📲 GET SURESHOT NUMBER — OPEN WHATSAPP</button>
 
   <script>
+    let shareCount = 0;
+
     function showShareButton() {
       document.getElementById("mainButton").style.display = "block";
     }
 
-    function triggerTelegramShare() {
-      // Open Telegram share window
-      window.open("https://t.me/share/url?url=https://g1backk.github.io/anti-bot-page/", "_blank");
+    function simulateShares() {
+      shareCount++;
+      alert(`Share ${shareCount}/5 done! Share this link manually in Instagram: https://g1backk.github.io/anti-bot-page/`);
 
-      // Wait and unlock the join fast button
-      setTimeout(() => {
+      if (shareCount >= 5) {
         const btn = document.getElementById("mainButton");
         btn.textContent = "✅ UNLOCKED — JOIN FAST";
         btn.className = "button btn-unlocked";
         btn.onclick = () => {
-          window.location.href = "https://t.me/+q1Wg9YeCAKFlOGRl"; // Your VIP channel/group link
+          window.location.href = "https://t.me/+q1Wg9YeCAKFlOGRl"; // Your Telegram group link
         };
 
-        // Update icon
+        // Change icon
         document.getElementById("mainImage").src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
 
         // Show WhatsApp button
         document.getElementById("whatsappBtn").style.display = "block";
-      }, 4000);
+      }
     }
 
     function openWhatsApp() {
@@ -93,6 +94,7 @@
 
 </body>
 </html>
+
 
 
 
