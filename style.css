@@ -1,0 +1,34 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #000, #111);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.logo {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(to right, #ff0080, #7928ca);
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:active {
+  transform: scale(0.97);
+}
