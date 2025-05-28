@@ -2,168 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Now - Premium Access</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Now - Color Prediction</title>
+  <meta name="description" content="Join our top Telegram Color Prediction Channel and earn daily! Fast tips, accurate predictions.">
+  
+  <!-- ✅ Facebook Pixel (Replace with your actual pixel code) -->
+  <!-- Facebook Pixel Code Start -->
+  <!-- Insert your Facebook Pixel here -->
+  <!-- Facebook Pixel Code End -->
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Share Tech Mono', monospace;
-    }
-
     body {
-      background: linear-gradient(135deg, #000000, #0f0f0f);
-      color: #00ffae;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
-    }
-
-    .btn {
-      display: inline-block;
-      background: transparent;
-      border: 2px solid #00ffae;
-      color: #00ffae;
-      padding: 15px 30px;
-      border-radius: 15px;
-      margin: 20px 0;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: all 0.4s ease;
-      position: relative;
-      box-shadow: 0 0 20px #00ffae, 0 0 40px #00ffae;
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    .btn:hover {
-      background: #00ffae;
-      color: #000;
-      box-shadow: 0 0 40px #00ffae, 0 0 80px #00ffae;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 20px #00ffae;
-      }
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 40px #00ffae;
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px #00ffae;
-      }
-    }
-
-    .glow-text {
-      color: #00ffae;
-      font-size: 1.3rem;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #020024, #090979, #00d4ff);
+      color: #fff;
       text-align: center;
-      margin-bottom: 1.5rem;
-      animation: hacker 1.5s infinite alternate;
+      padding: 30px 15px;
     }
-
-    @keyframes hacker {
-      from {
-        text-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
-      }
-      to {
-        text-shadow: 0 0 30px #00ffae, 0 0 60px #00ffae;
-      }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
-
-    .particle-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      z-index: -1;
-      background: #000;
+    p {
+      font-size: 1.1em;
+      margin-bottom: 2em;
+    }
+    .join-btn {
+      background: #00ffcc;
+      color: #000;
+      padding: 18px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffcc;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .join-btn:hover {
+      background: #00bfa6;
+      box-shadow: 0 0 25px #00ffcc;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <canvas class="particle-bg"></canvas>
 
-  <h1>🚀 JOIN TELEGRAM FOR FREE</h1>
-  <a href="https://t.me/+DZERETIFTt9jYjRl" class="btn">Join Now</a>
+  <h1>🔥 Join Our Color Prediction Channel</h1>
+  <p>Get accurate tips, daily winning numbers & exclusive bonuses. Don’t miss out!</p>
 
-  <p class="glow-text">
-    ⚡ FOR NUMBER SURESHOT<br>
-    💰 300 SE 10000 BNA DUNGA<br>
-    📲 MSG ME ON WHATSAPP NOW!
-  </p>
+  <a href="https://t.me/YOUR_CHANNEL_USERNAME" class="join-btn">🚀 Join Now</a>
 
-  <a href="https://wa.me/919999999999" class="btn">💬 Message on WhatsApp</a>
-  <a href="https://wa.me/919999999999?text=Send%20Sureshot%20Number%20Now" class="btn">📞 WhatsApp Sureshot Help</a>
+  <footer>
+    &copy; 2025 Color Tips | Powered by GitHub Pages
+  </footer>
 
-  <script>
-    const canvas = document.querySelector('.particle-bg');
-    const pCtx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-    const count = 120;
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1 - 0.5;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      }
-      draw() {
-        pCtx.fillStyle = '#00ffae';
-        pCtx.beginPath();
-        pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        pCtx.fill();
-      }
-    }
-
-    function init() {
-      particles = [];
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
-      }
-    }
-
-    function animate() {
-      pCtx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
-      requestAnimationFrame(animate);
-    }
-
-    init();
-    animate();
-  </script>
 </body>
 </html>
+
 
 
 
