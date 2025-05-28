@@ -3,103 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subscribe Now - Color Prediction</title>
-  <meta name="description" content="Subscribe to the best Color Prediction Telegram channel and get daily winning tips!">
+  <title>Join Our Telegram Channel</title>
 
-  <!-- ✅ Facebook Pixel Code -->
-  <!-- Paste your pixel code below -->
-  <!-- Example: <script>fbq('init', 'PIXEL_ID'); fbq('track', 'PageView');</script> -->
+  <!-- Optional Facebook Pixel -->
+  <!-- <script>fbq('init', 'PIXEL_ID'); fbq('track', 'PageView');</script> -->
 
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
+      background: radial-gradient(circle at center, #1e1e2f, #121220);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       height: 100vh;
-      text-align: center;
       overflow: hidden;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.2em;
-      margin: 0.5em 0;
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      background: linear-gradient(to right, #00fff0, #00ffc3, #00ff9c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    p {
-      font-size: 1em;
-      margin: 0.5em 0 2em;
-    }
-
-    .subscribe-btn {
-      background: #00ffc8;
-      color: #000;
-      font-size: 1.5em;
+    .button {
+      margin-top: 25px;
+      padding: 18px 40px;
+      font-size: 1.6em;
       font-weight: bold;
-      padding: 20px 50px;
+      color: black;
+      background: #00ffc8;
       border: none;
       border-radius: 50px;
+      box-shadow: 0 0 30px #00ffc8;
       cursor: pointer;
+      animation: glow 2s infinite ease-in-out;
       text-decoration: none;
-      box-shadow: 0 0 25px #00ffc8, 0 0 60px #00ffc8;
-      animation: pulse 1.5s infinite;
-      z-index: 1;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 20px #00ffc8; }
-      50% { box-shadow: 0 0 40px #00ffc8; }
-      100% { box-shadow: 0 0 20px #00ffc8; }
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #00ffc8; }
+      50% { box-shadow: 0 0 30px #00ffc8; }
+      100% { box-shadow: 0 0 10px #00ffc8; }
     }
 
-    .subtext {
+    .sub {
       font-size: 1em;
-      color: #ddd;
-      margin-top: 1em;
+      color: #ccc;
+      margin-top: 12px;
     }
 
     footer {
       position: absolute;
-      bottom: 15px;
-      font-size: 0.85em;
+      bottom: 10px;
+      font-size: 0.8em;
       opacity: 0.5;
     }
   </style>
 
   <script>
-    // ✅ Auto-redirect to Telegram channel in 3 seconds
-    setTimeout(() => {
-      window.location.href = "https://t.me/YOUR_CHANNEL_USERNAME";
-    }, 3000);
+    // Force open Telegram app (fallback to link)
+    function openTelegram() {
+      window.location.href = "tg://join?invite=yanMwI6iw3hjNDll";
+      setTimeout(() => {
+        window.location.href = "https://t.me/+yanMwI6iw3hjNDll";
+      }, 2000); // fallback if app doesn't open
+    }
+
+    // Auto redirect after 2 seconds
+    window.onload = function () {
+      setTimeout(openTelegram, 2000);
+    };
   </script>
 </head>
+
 <body>
+  <h1>🚀 SUBSCRIBE NOW</h1>
+  <a href="tg://join?invite=yanMwI6iw3hjNDll" class="button">SUBSCRIBE NOW</a>
+  <div class="sub">Join now for free</div>
 
-  <h1>🔥 Subscribe Now to Win Big</h1>
-  <p>Daily color prediction tips, 99.9% accuracy, 24/7 support.</p>
-
-  <a href="https://t.me/YOUR_CHANNEL_USERNAME" class="subscribe-btn">SUBSCRIBE NOW</a>
-  <div class="subtext">Join now for free</div>
-
-  <footer>&copy; 2025 Color Prediction Tips. All rights reserved.</footer>
-
+  <footer>&copy; 2025 Telegram Growth Network</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
